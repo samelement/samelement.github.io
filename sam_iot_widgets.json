@@ -542,7 +542,8 @@
     "min_width": 3,
     "min_height": 3,
     "compatible_models": [
-      "ELITECH-WSDPRO"
+      "ELITECH-WSDPRO",
+	  "wscales-elitech"
     ],
     "vendor" : "Elitech",
     "tags": "elitech,timbangan,scales,bluetooth",
