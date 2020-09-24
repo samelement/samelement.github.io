@@ -571,5 +571,63 @@
         ]
       }
     ]
+  },
+    {
+    "id": "doppler-elitech",
+    "title": "Pocket Doppler",
+    "icon": "cardiogram.png",
+    "min_width": 3,
+    "min_height": 3,
+    "compatible_models": [
+      "doppler-elitech"
+    ],
+    "vendor" : "Elitech",
+    "tags": "elitech,doppler,bluetooth",
+    "elements": [
+	  {
+		"id": "seven-segment",
+        "title": "Seven Segment",
+        "icon": "7segment.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "doppler/heart_rate"
+        ]
+	  },
+      {
+        "id": "gauge",
+        "title": "Gauge",
+        "icon": "023-pie-chart-1.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "doppler/heart_rate_signal"
+        ]
+      },
+	  {
+        "id": "thermometer",
+        "title": "Thermometer",
+        "icon": "thermometer.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "doppler/battery"
+        ]
+      },
+      {
+        "id": "simple-time-series",
+        "title": "Simple Time Series",
+        "icon": "036-line-chart.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "doppler/heart_rate"
+        ]
+      }
+    ]
   }
 ]
