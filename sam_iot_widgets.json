@@ -542,8 +542,7 @@
     "min_width": 3,
     "min_height": 3,
     "compatible_models": [
-      "ELITECH-WSDPRO",
-      "wscales-elitech"
+      "ELITECH-WSDPRO"
     ],
     "vendor" : "Elitech",
     "tags": "elitech,timbangan,scales,bluetooth",
@@ -579,7 +578,7 @@
     "min_width": 3,
     "min_height": 3,
     "compatible_models": [
-      "doppler-elitech"
+      "ELITECH-BT5050"
     ],
     "vendor" : "Elitech",
     "tags": "elitech,doppler,bluetooth",
