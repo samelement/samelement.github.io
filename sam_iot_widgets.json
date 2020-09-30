@@ -543,10 +543,10 @@
     "min_height": 3,
     "compatible_models": [
       "ELITECH-WSDPRO",
-	  "wscales-elitech"
+      "wscales-elitech"
     ],
     "vendor" : "Elitech",
-    "tags": "elitech,timbangan,scales,bluetooth",
+    "tags": "elitech,timbangan,scales,bluetooth,berat,badan",
     "elements": [
       {
         "id": "gauge",
@@ -572,7 +572,7 @@
       }
     ]
   },
-    {
+  {
     "id": "doppler-elitech",
     "title": "Pocket Doppler",
     "icon": "cardiogram.png",
@@ -582,10 +582,10 @@
       "ELITECH-BT5050"
     ],
     "vendor" : "Elitech",
-    "tags": "elitech,doppler,bluetooth",
+    "tags": "elitech,doppler,bluetooth,janin,heart,rate,hamil",
     "elements": [
-	  {
-		"id": "seven-segment",
+      {
+        "id": "seven-segment",
         "title": "Seven Segment",
         "icon": "7segment.png",
         "settable": false,
@@ -594,11 +594,11 @@
         "accepted_parameters": [
           "doppler/heart_rate"
         ]
-	  },
+      },
       {
-        "id": "gauge",
-        "title": "Gauge",
-        "icon": "023-pie-chart-1.png",
+        "id": "signal",
+        "title": "Signal Strength",
+        "icon": "signal.png",
         "settable": false,
         "retained": true,
         "num_of_parameters": 1,
@@ -606,10 +606,10 @@
           "doppler/heart_rate_signal"
         ]
       },
-	  {
-        "id": "thermometer",
-        "title": "Thermometer",
-        "icon": "thermometer.png",
+      {
+        "id": "battery",
+        "title": "Battery Level",
+        "icon": "battery.png",
         "settable": false,
         "retained": true,
         "num_of_parameters": 1,
@@ -626,6 +626,60 @@
         "num_of_parameters": 1,
         "accepted_parameters": [
           "doppler/heart_rate"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "battery",
+    "title": "Battery Level",
+    "icon": "battery.png",
+    "min_width": 3,
+    "min_height": 3,
+    "compatible_models": [
+      "SAM-*",
+      "IOT-*"
+    ],
+    "vendor" : "General",
+    "tags": "widget,baterai,battery,indicator,level",
+    "elements": [
+      {
+        "id": "battery",
+        "title": "Battery Level",
+        "icon": "battery.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "float",
+          "integer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "signal",
+    "title": "Signal Strength",
+    "icon": "signal.png",
+    "min_width": 3,
+    "min_height": 3,
+    "compatible_models": [
+      "SAM-*",
+      "IOT-*"
+    ],
+    "vendor" : "General",
+    "tags": "widget,signal,sinyal,indicator,level",
+    "elements": [
+      {
+        "id": "signal",
+        "title": "Signal",
+        "icon": "signal.png",
+        "settable": false,
+        "retained": true,
+        "num_of_parameters": 1,
+        "accepted_parameters": [
+          "float",
+          "integer"
         ]
       }
     ]
