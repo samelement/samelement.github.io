@@ -1,42 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-	<title>404 HTML Template by Colorlib</title>
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="absensi">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>absensi</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "231417754";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  <style>
+    .loading {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 8px solid #00AD87;
+      border-right: 8px solid #C30E48;
+      border-bottom: 8px solid #00AD87;
+      border-left: 8px solid #C30E48;
+      width: 60px !important;
+      height: 60px !important;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+</style>
 </head>
-
 <body>
+    <!-- First time loading -->
+    <div class="loading">
+      <div class="loader"></div>
+  </div>
 
-	<div id="notfound">
-		<div class="notfound">
-			<div class="notfound-404">
-				<h3>Oops! Page not found</h3>
-				<h1><span>4</span><span>0</span><span>4</span></h1>
-			</div>
-			<h2>we are sorry, but the page you requested was not found</h2>
-		</div>
-	</div>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+  <!-- Ensure first time loading progress is gone after app loads -->
+  <script>
+      window.addEventListener("flutter-first-frame", function() {
+          var element = document.getElementsByClassName("loading");
+          element[0].parentNode.removeChild(element[0]);
+      });
+  </script>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script>
+</body>
 </html>
